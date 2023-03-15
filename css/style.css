@@ -1,0 +1,185 @@
+/* will apply to all html content */
+* {
+    box-sizing: border-box;
+    transition: all 0.5s;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    padding: 10px;
+    display: flex;
+}
+
+.navbar-wrapper1 {
+    /* background-color: aqua; */
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.navbar-wrapper1 img {
+    margin-left: 70px;
+    margin-right: 20px;
+}
+
+.navbar-wrapper2 {
+    /* background-color: aquamarine; */
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+/* inline-block will make the list horizontal */
+.navbar-wrapper2 li {
+    display: inline-block;
+}
+
+.navbar-wrapper2 button {
+    font-size: 16px;
+    color: #36454F;
+    margin-right: 20px;
+    padding: 10px;
+    border-style: none;
+    background-color: transparent;
+}
+
+.navbar-wrapper2 a:hover button {
+    color: white;
+    background-color: lightblue;
+    padding: 12px;
+    border-radius: 5px;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+/* since now I'm using button, I will comment this out */
+/* .navbar-wrapper2 a {
+    color: #36454F;
+    margin-right: 50px;
+    text-decoration: none;
+} */
+
+.navbar-wrapper2 a:hover, .third a:hover {
+    color: blue;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+.section {
+    /* background-color: red; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    /* vh = viewport height */
+    height: 75vh;
+    justify-content: center;
+}
+
+/* this will be transfered to another file */
+/* .section-wrapper {
+    background-color: aqua;
+    max-height: 650px;
+    max-width: 500px;
+    text-align: center;
+} */
+
+
+/* # used since p1 is an ID, not a class */
+#p1 {
+    font-weight: 600;
+    color: lightslategray;
+}
+
+#p2 {
+    font-weight: bolder;
+    font-size: 32px;
+    color: #36454F;
+}
+
+#p3 {
+    font-weight: 500;
+    color: grey;
+}
+
+.footer {
+    /* background-color: lightblue; */
+    display: flex;
+    padding: 10px;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-wrapper .first, .second {
+    /* background-color: yellow; */
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.third {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.third a {
+    text-decoration: none;
+    color: #36454F;
+}
+
+/* since we have some icons */
+.left1, .left2 {
+    display: flex;
+    flex: 1;
+    padding-right: 10px;
+}
+
+/* YouTube tutorial for hamburger menu */
+
+.hamburger {
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    display: none;
+}
+
+/*  */
+
+/* Media Queries is used to make sure the content are responsive to the layout of the browser */
+
+/* this is for mobile devices */
+@media(max-width: 768px) {
+
+    .footer-wrapper {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-wrapper .first, .second {
+        margin-bottom: 20px;
+    }
+
+    .footer-wrapper .left1, .left2 {
+        margin-right: 24px;
+    }
+}

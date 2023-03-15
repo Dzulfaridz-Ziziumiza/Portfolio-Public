@@ -1,0 +1,22 @@
+.section-wrapper {
+    /* background-color: aqua; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-wrapper a {
+    text-decoration: none;
+    text-align: center;
+    color: #36454F;
+    margin-bottom: 42px;
+}
+
+.section-wrapper a:hover p {
+    background-color: lightblue;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+}

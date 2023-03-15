@@ -1,0 +1,46 @@
+.section-wrapper {
+    /* background-color: aqua; */
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+h3,
+#p4,
+#p5 {
+    text-transform: uppercase;
+    color: grey;
+    font-weight: bold;
+}
+
+#p4 {
+    /* color: blue; */
+    color: darkgreen;
+}
+
+#p5 {
+    /* color: darkgreen; */
+    color: blue;
+}
+
+#p4,
+#p5,
+#p6 {
+    letter-spacing: 0.4px;
+}
+
+.experience,
+.education {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+@media (max-width: 768px) {
+    .section-wrapper {
+        flex-direction: column;
+    }
+
+    .footer {
+        margin-top: 15%;
+    }
+}
