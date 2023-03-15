@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    transition: all 0.5s;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f9feff;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    /* vh is viewport-height, taking 75% of viewport height, I guess */
+    height: 85vh;
+    align-items: center;
+}
+
+.navbar {
+    background-color: lightblue;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+    width: 100%;
+}
+
+.navbar-btn {
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+    background-color: transparent;
+    border-style: none;
+}
+
+.navbar-btn:hover {
+    color: white;
+    transition: 0.1s;
+}
+
+.section-bar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: start;
+    align-items: center;
+}
+
+.section-bar #p1 {
+    font-size: 24px;
+}
+
+.section-bar form {
+    min-width: 210%;
+    background-color: #f9f9f8;
+    border-radius: 5px;
+    /* box-shadow requires 3 attribute */
+    box-shadow: 2px 2px #888888;
+    padding: 12px;
+}
+
+.section-bar form input {
+    width: 100%;
+    padding: 5px;
+}
+
+.section-bar .login-btn {
+    /* bruh, been scratching my head over this */
+    float: right;
+    padding: 5px 42px;
+    color: white;
+    background-color: blue;
+    border-color: blue;
+    border-radius: 5px;
+}
+
+.section-bar .login-btn:hover {
+    color: black;
+    background-color: orange;
+    border-color: orange;
+}
+
+form a {
+    font-size: 12px;
+    text-decoration: none;
+    color: blue;
+}
+
+form p {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* this is for responsiveness(?) */
+
+/* this is for mobile devices */
+@media(max-width: 768px) {
+    .account-btn {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .section-bar form {
+        min-width: 360px;
+    }    
+}
