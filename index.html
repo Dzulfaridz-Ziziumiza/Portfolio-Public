@@ -11,22 +11,61 @@
 
 <body>
     <section class="wrapper">
-        <h1>singularity</h1>
+        <h1>singulahuhuhuhuhuhrity</h1>
         <h2>coming soon</h2>
         <video class="video-property" autoplay controls loop muted playsinline
             src="/assets/video/_import_61b87254b66f66.88254678_FPpreview.mp4"></video>
         <p>get notified when it's out</p>
-        <form id="submitForm"><input type="email" name="" id="">
+        <form id="submitForm"><input type="email" name="" id="emailInput">
             <button id="submitBtn">Send</button>
         </form>
     </section>
+    <div id="snackbarContainer"></div>
 </body>
 
 <script>
-    document.getElementById("submitForm").addEventListener("click", (event) => {
-        // prevent the page from refreshing 
-        event.preventDefault();
+    // Get the form element
+    const form = document.getElementById('submitForm');
+
+    // Add a submit event listener to the form
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the email input value
+        const emailInput = document.getElementById('emailInput');
+        const email = emailInput.value;
+
+        // Regular expression pattern for email validation
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        // Check if the email is valid
+        if (emailPattern.test(email)) {
+            // Email is valid, perform further actions (e.g., submit form, process data)
+            console.log('Valid email:', email);
+            // ...perform additional tasks here
+            // submit the email and clear the input fields
+            emailInput.value = "";
+            // After successful email submission
+            showSnackbar('Email submitted successfully!');
+        } else {
+            // Email is invalid, show an error message or take appropriate action
+            console.log('Invalid email', email);
+            // ...display an error message or take other actions
+            showSnackbar('Please enter a valid email!');
+        }
+
+        function showSnackbar(message) {
+            const snackbarContainer = document.getElementById('snackbarContainer');
+            snackbarContainer.textContent = message;
+            snackbarContainer.style.display = 'block';
+
+            setTimeout(() => {
+                snackbarContainer.style.display = 'none';
+            }, 3000); // Hide the snackbar after 3000 milliseconds (3 seconds)
+        }
+
     });
+
 </script>
 
 <style>
@@ -72,12 +111,13 @@
     }
 
     .wrapper form input {
-        background-color: rgba(255,255,255,0.4);
+        background-color: rgba(255, 255, 255, 0.4);
         border: 2px solid black;
         border-radius: 50px;
         height: 44px;
-        position: relative;
         width: 480px;
+        padding: 0px 12px;
+        color: #F2F3F4;
     }
 
     .wrapper form button {
@@ -87,16 +127,28 @@
         color: #F2F3F4;
         cursor: pointer;
         height: 40px;
-        position: absolute;
         left: 1054px;
         bottom: 71px;
         text-transform: uppercase;
         width: 96px;
-        
+
     }
 
     .wrapper form button:hover {
         background-color: black;
+    }
+
+    #snackbarContainer {
+        display: none;
+        position: fixed;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 4px;
+        z-index: 9999;
     }
 </style>
 
